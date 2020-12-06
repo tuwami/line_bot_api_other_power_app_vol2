@@ -41,6 +41,16 @@ server.post('/bot/webhook', line.middleware(line_config), (req, res, next) => {
                 }));
             }
         }
+	});
+	req.body.events.forEach((event) => {
+        if (event.type == "message" && event.message.type == "text"){
+            if (event.message.text == "おやすみ"){
+                events_processed.push(bot.replyMessage(event.replyToken, {
+                    type: "text",
+                    text: "いい夢を見てね"
+                }));
+            }
+        }
     });
 
     // すべてのイベント処理が終了したら何個のイベントが処理されたか出力。
