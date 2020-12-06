@@ -52,12 +52,12 @@ server.post('/bot/webhook', line.middleware(line_config), (req, res, next) => {
 					text: "ざこじゃないもん！"
 				}));
 			}
-			if (event.message.type == "他力本願"){
+			if (event.message.text == "他力本願"){
 				events_processed.push(bot.replyMessage(event.replyToken, {
 					type: "text",
 					text: "駅を指定してください"
 				}));
-				if (event.message.type == "三茶"){
+				if (event.message.text == "三茶"){
 					events_processed.push(bot.replyMessage(event.replyToken, {
 						type: "text",
 						text: "さんちゃ"
