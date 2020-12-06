@@ -43,7 +43,7 @@ server.post('/bot/webhook', line.middleware(line_config), (req, res, next) => {
 			if (event.message.text == "おやすみ"){
 				events_processed.push(bot.replyMessage(event.replyToken, {
 					type: "text",
-					text: "いい夢をみてね"
+					text: "いい夢みてね"
 				}));
 			}
 			if (event.message.text == "ざこ"){
@@ -53,12 +53,12 @@ server.post('/bot/webhook', line.middleware(line_config), (req, res, next) => {
 				}));
 			}
 			if (event.message.type == "他力本願"){
-				events_processed.push(bot.replyMassage(event.replyToken, {
+				events_processed.push(bot.replyMessage(event.replyToken, {
 					type: "text",
 					text: "駅を指定してください"
 				}));
 				if (event.message.type == "三茶"){
-					events_processed.push(bot.replyMassage(event.replyToken, {
+					events_processed.push(bot.replyMessage(event.replyToken, {
 						type: "text",
 						text: "さんちゃ"
 					}));
