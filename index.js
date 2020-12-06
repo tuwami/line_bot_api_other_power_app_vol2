@@ -52,6 +52,18 @@ server.post('/bot/webhook', line.middleware(line_config), (req, res, next) => {
 					text: "ざこじゃないもん！"
 				}));
 			}
+			if (event.message.type == "他力本願"){
+				events_processed.push(bot.replyMassage(event.replyToken, {
+					type: "text",
+					text: "駅を指定してください"
+				}));
+				if (event.message.type == "三茶"){
+					events_processed.push(bot.replyMassage(event.replyToken, {
+						type: "text",
+						text: "さんちゃ"
+					}));
+				}
+			}
         }
 	});
 
