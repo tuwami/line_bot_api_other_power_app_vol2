@@ -43,7 +43,13 @@ server.post('/bot/webhook', line.middleware(line_config), (req, res, next) => {
 			if (event.message.text == "おやすみ"){
 				events_processed.push(bot.replyMessage(event.replyToken, {
 					type: "text",
-					text: "いい夢を見てね"
+					text: "いい夢をみてね"
+				}));
+			}
+			if (event.message.text == "ざこ"){
+				events_processed.push(bot.replyMessage(event.replyToken, {
+					type: "text",
+					text: "ざこじゃないもん！"
 				}));
 			}
         }
