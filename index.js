@@ -53,9 +53,10 @@ server.post('/bot/webhook', line.middleware(line_config), (req, res, next) => {
 				}));
 			}
 			else if (event.message.text == "他力本願"){
-				events_processed.push(bot.replyMessage(event.replyToken, {
-					type: "text",
-					text: "駅を指定してください"
+				if (event.message.text == "駒沢"){
+					events_processed.push(bot.replyMessage(event.replyToken, {
+						type: "text",
+						text: "駅を指定してください"
 				}));
 				if (event.message.text == "三茶"){
 					events_processed.push(bot.replyMessage(event.replyToken, {
@@ -71,11 +72,12 @@ server.post('/bot/webhook', line.middleware(line_config), (req, res, next) => {
 				}));
 			}
 		}
-		else
-		events_processed.push(bot.replyMessage(event.replyToken, {
-			type: "text",
-			text: "テキストで送ってね"
-		}));
+		else {
+			events_processed.push(bot.replyMessage(event.replyToken, {
+				type: "text",
+				text: "テキストで送ってね"
+			}));
+		}
 	});
 
     // すべてのイベント処理が終了したら何個のイベントが処理されたか出力。
