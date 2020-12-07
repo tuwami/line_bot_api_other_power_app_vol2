@@ -67,14 +67,14 @@ server.post('/bot/webhook', line.middleware(line_config), (req, res, next) => {
 			else {
 				events_processed.push(bot.replyMessage(event.replyToken, {
 					type: "text",
-					text: "ちゃんとがんばんなさい"
+					text: event.message.text
 				}));
 			}
 		}
 		else
 		events_processed.push(bot.replyMessage(event.replyToken, {
 			type: "text",
-			text: "テキストを送ってね"
+			text: "テキストで送ってね"
 		}));
 	});
 
