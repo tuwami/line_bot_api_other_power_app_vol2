@@ -40,19 +40,19 @@ server.post('/bot/webhook', line.middleware(line_config), (req, res, next) => {
                     text: "これはこれは"
                 }));
 			}
-			if (event.message.text == "おやすみ"){
+			else if (event.message.text == "おやすみ"){
 				events_processed.push(bot.replyMessage(event.replyToken, {
 					type: "text",
 					text: "いい夢みてね"
 				}));
 			}
-			if (event.message.text == "ざこ"){
+			else if (event.message.text == "ざこ"){
 				events_processed.push(bot.replyMessage(event.replyToken, {
 					type: "text",
 					text: "ざこじゃないもん！"
 				}));
 			}
-			if (event.message.text == "他力本願"){
+			else if (event.message.text == "他力本願"){
 				events_processed.push(bot.replyMessage(event.replyToken, {
 					type: "text",
 					text: "駅を指定してください"
