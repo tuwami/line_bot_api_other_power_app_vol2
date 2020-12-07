@@ -72,7 +72,7 @@ server.post('/bot/webhook', line.middleware(line_config), (req, res, next) => {
 			}
 		}
 		else {
-			push("text", "テキストで送ってね！");
+			output_push("text", "テキストで送ってね！");
 		}
 	});
 
@@ -85,7 +85,7 @@ server.post('/bot/webhook', line.middleware(line_config), (req, res, next) => {
 });
 
 // Push関数
-function push(input_type, input_text){
+function output_push(input_type, input_text){
 	events_processed.push(bot.replyMessage(event.replyToken, {
 		type: input_type,
 		text: input_text
