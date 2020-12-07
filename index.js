@@ -53,17 +53,16 @@ server.post('/bot/webhook', line.middleware(line_config), (req, res, next) => {
 				}));
 			}
 			else if (event.message.text == "他力本願"){
-				if (event.message.text == "駒沢"){
-					events_processed.push(bot.replyMessage(event.replyToken, {
-						type: "text",
-						text: "駅を指定してください"
+				events_processed.push(bot.replyMessage(event.replyToken, {
+					type: "text",
+					text: "駅を指定してください"
 				}));
-				if (event.message.text == "三茶"){
+				if (event.message.text == "他力本願"){
 					events_processed.push(bot.replyMessage(event.replyToken, {
 						type: "text",
 						text: "さんちゃ"
 					}));
-				}}
+				}
 			}
 			else {
 				events_processed.push(bot.replyMessage(event.replyToken, {
